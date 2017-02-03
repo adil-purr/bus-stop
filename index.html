@@ -10,16 +10,37 @@
 
   </head>
   <body>
-    <div class='container'>
-      <div class='time-box'>
-        <div class='bus'>
+    <!-- <div class='headers'>
 
-        </div>
+      <h1 class='header2'>Departed</h1>
+    </div> -->
+    <h1 class='header1'>Incoming</h1>
+
+    <div class='container'>
+
+      <div class='time-box'>
+
       </div>
+      <!-- <div class='time-box-2'>
+
+      </div> -->
     </div>
     <ul id="messages"></ul>
 
-      <input id="m" type=number autocomplete="off" /><button id='send'>Send</button>
-      <button id='getTimes'>Get bus times</button>
+    <h3 id='que'>Time till last bus :</h3>
+    <h3 id='totalBuses'>Total Buses :</h3>
+
+      <div class='container'>
+        <div>
+
+            <input id='number' placeholder="Number" type='number'/><br  />
+            <input id='routeName' placeholder="Route Name" type='text'/><br  />
+            <input id='time' placeholder="TIme till arrival in minutes" type='text'/><br  />
+            <button id='book'>Book</button>
+
+        </div>
+      </div>
+
+
   </body>
 </html>
