@@ -1,0 +1,9 @@
+{
+  "name": "bus-stop",
+  "version": "0.0.1",
+  "description": "getting started with sockets",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.5.0"
+  }
+}
