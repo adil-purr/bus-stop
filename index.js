@@ -20,3 +20,16 @@ http.listen(3000, function(){
 });
 
 app.use(express.static('public'))
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+  });
+
+  socket.on('bus message', function(msg){
+    console.log(msg)
+    allBuses.push(msg)
+  })
+
+
+var allBuses = []
