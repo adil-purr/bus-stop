@@ -3,8 +3,11 @@ $(document).ready(function(){
 
 
   $('#send').on('click',function(){
-    time = $('#m').val();
-    bus = {'time': time}
+    number = $('#m').val();
+    bus = {
+      'number': number,
+      'time' : 100
+    }
     socket.emit('bus message', bus);
     $('#m').val('');
     return false;
