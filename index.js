@@ -31,9 +31,23 @@ io.on('connection', function(socket){
     allBuses.push(msg)
   })
 
-  socket.on('getTimes', function(){
+
+  setInterval(function(){
     io.emit('allBusTimes', allBuses)
-  })
+  }, 3000)
+
 });
 
 var allBuses = []
+
+setInterval(function(){
+  for (var i = 0; i < allBuses.length; i++) {
+    allBuses[i].time -= 1
+  }
+}, 1000)
+
+
+
+var busTick = function(bus){
+  bus.time -= 1
+}
