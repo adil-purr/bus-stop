@@ -18,14 +18,23 @@ $(document).ready(function(){
   })
 
   socket.on('allBusTimes', function(buses){
-    console.log(buses)
-    for (var i = 0; i < buses.length; i++) {
-      createBus(buses[i])
-    }
+    // console.log(buses)
+    updateBusElements(buses)
   })
 
 })
 
-var createBus = function(bus){
-  $('.time-box').append('<div class="bus "' + bus.number +'>'+bus.time +'</div>')
+var createBusElement = function(bus){
+  $('.time-box').prepend('<div class="bus ' + bus.number +'">Bus Number:'+bus.number+' is coming in <p class="time">' +bus.time +'</p> seconds.</div>')
+}
+
+var updateBusElements = function(busArray){
+  for (var i = 0; i < busArray.length; i++) {
+    if($('.bus.'+busArray[i].number).length == 1){
+      $('.bus.'+busArray[i].number).children().first().text(busArray[i].time);
+    }
+    else{
+      createBusElement(busArray[i])
+    }
+  }
 }

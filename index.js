@@ -34,7 +34,7 @@ io.on('connection', function(socket){
 
   setInterval(function(){
     io.emit('allBusTimes', allBuses)
-  }, 3000)
+  }, 2000)
 
 });
 
@@ -43,6 +43,10 @@ var allBuses = []
 setInterval(function(){
   for (var i = 0; i < allBuses.length; i++) {
     allBuses[i].time -= 1
+    if(allBuses[i].time <= 0){
+      allBuses.splice(i, 1)
+    }
+
   }
 }, 1000)
 
