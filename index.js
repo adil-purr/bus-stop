@@ -31,5 +31,9 @@ io.on('connection', function(socket){
     allBuses.push(msg)
   })
 
+  socket.on('getTimes', function(){
+    io.emit('allBusTimes', allBuses)
+  })
+});
 
 var allBuses = []
