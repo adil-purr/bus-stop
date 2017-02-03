@@ -17,8 +17,11 @@ $(document).ready(function(){
     socket.emit('getTimes');
   })
 
-  socket.on('allBusTimes', function(msg){
-    console.log(msg)
+  socket.on('allBusTimes', function(buses){
+    console.log(buses)
+    for (var i = 0; i < buses.length; i++) {
+      createBus(buses[i])
+    }
   })
 
 })
