@@ -22,3 +22,7 @@ $(document).ready(function(){
   })
 
 })
+
+var createBus = function(bus){
+  $('.time-box').append('<div class="bus "' + bus.number +'>'+bus.time +'</div>')
+}
