@@ -25,13 +25,13 @@ $(document).ready(function(){
 })
 
 var createBusElement = function(bus){
-  $('.time-box').prepend('<div class="bus ' + bus.number +'">Bus Number:'+bus.number+' is coming in <p class="time">' +bus.time +'</p> seconds.</div>')
+  $('.time-box').prepend('<div class="bus number' + bus.number +'">Bus Number:'+bus.number+' is coming in <p class="time">' +bus.time +'</p> seconds.</div>')
 }
 
 var updateBusElements = function(busArray){
   for (var i = 0; i < busArray.length; i++) {
-    if($('.bus.'+busArray[i].number).length == 1){
-      $('.bus.'+busArray[i].number).children().first().text(busArray[i].time);
+    if($('.bus.number'+busArray[i].number).length == 1){
+      $('.bus.number'+busArray[i].number).children().first().text(busArray[i].time);
     }
     else{
       createBusElement(busArray[i])
